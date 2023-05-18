@@ -1,0 +1,465 @@
+@charset "UTF-8";
+
+
+html{
+    font-size: 62.5%;
+}
+
+body {
+    font-family: 'Montserrat', 'Italiana';
+    font-weight: 300, 400;
+	-webkit-font-feature-settings: 'palt';
+	font-feature-settings: 'palt';
+    margin: 0;
+}
+img {
+	max-width: 100%;
+	height: auto;
+}
+
+a{
+    text-decoration: none;
+    color:inherit;
+}
+a:hover {
+    opacity: 0.6;
+}
+
+ul li{
+    list-style: none;
+}
+
+/* Utility */
+p {
+    font-size: 1.4em;
+    margin: 0;
+}
+
+.text-center{
+    text-align: center;
+}
+
+.sp{
+    display: block;
+}
+
+.pc{
+    display: none;
+}
+
+/*----------------------
+
+Header
+
+----------------------*/
+.header{
+    height: 100vh;
+    background-image: url(../image/firstview__sp.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 15px;
+}
+.header-inner{
+    position: relative;
+    padding: 15px;
+}
+
+.site-title{
+    max-width: 100px;
+    margin: 0 auto;
+    line-height: 1;
+}
+.CC{
+    position: absolute;
+    white-space: nowrap;
+    height: auto;
+    top: 520px;
+    left: 20%;
+    transform: translate(-20%,-5%);
+    font-size: 25px;
+    color: #3F2924;
+}
+
+/*---Search----*/
+.form-search{
+    display: none;
+}
+
+
+
+
+/*========= ナビゲーションのためのCSS ===============*/
+
+#g-nav{
+    /*position:fixed;にし、z-indexの数値を大きくして前面へ*/
+    position:fixed;
+    z-index: 999;
+    /*ナビのスタート位置と形状*/
+	top:0;
+    right: -120%;
+	width:100%;
+    height: 100vh;/*ナビの高さ*/
+	background:#FFF;
+    /*動き*/
+	transition: all 0.6s;
+}
+
+/*アクティブクラスがついたら位置を0に*/
+
+#g-nav.panelactive{
+    right: 0;
+}
+
+/*ナビゲーション*/
+
+#g-nav ul {
+    /*ナビゲーション天地中央揃え*/
+    position: absolute;
+    z-index: 999;
+    top: 40%;
+    left: 30%;
+    transform: translate(-40%,-30%);
+}
+
+/*リストのレイアウト設定*/
+
+#g-nav li{
+	list-style: none;
+    text-align: left;
+}
+
+#g-nav{
+    font-family: 'Montserrat', sans-serif;
+	color: #595757;
+	text-decoration: none;
+	padding:10px;
+	display: block;
+	letter-spacing: 0.1em;
+	font-weight: 300;
+}
+
+.nav-list{
+    margin: 0;
+    padding: 0 0 24px;
+}
+.nav-item{
+	margin-bottom: 15px;
+	text-transform: uppercase;
+}
+.nav-line{
+	width: 54px;
+	margin: 0;
+}
+
+.nav-brown{
+    font-family: 'Italiana', serif;
+    color: #3F2924;
+    font-size: 1.6em;
+}
+.nav-title{
+	display: inline-block;
+	margin: 20px 0;
+}
+/*========= ボタンのためのCSS ===============*/
+.openbtn{
+	position:fixed;
+    z-index: 9999;/*ボタンを最前面に*/
+	top:10px;
+	right: 10px;
+	cursor: pointer;
+    width: 50px;
+    height:50px;
+}
+	
+/*×に変化*/	
+.openbtn span{
+    display: inline-block;
+    transition: all .4s;
+    position: absolute;
+    left: 14px;
+    height: 3px;
+    border-radius: 2px;
+	background-color: #6B5B49;
+  	width: 45%;
+  }
+
+.openbtn span:nth-of-type(1) {
+	top:15px;	
+}
+
+.openbtn span:nth-of-type(2) {
+	top:23px;
+}
+
+.openbtn span:nth-of-type(3) {
+	top:31px;
+}
+
+.openbtn.active span:nth-of-type(1) {
+    top: 18px;
+    left: 18px;
+    transform: translateY(6px) rotate(-45deg);
+    width: 30%;
+}
+
+.openbtn.active span:nth-of-type(2) {
+	opacity: 0;
+}
+
+.openbtn.active span:nth-of-type(3){
+    top: 30px;
+    left: 18px;
+    transform: translateY(-6px) rotate(45deg);
+    width: 30%;
+}
+/*--------------------------
+  *
+  * Goods list
+  *
+--------------------------*/
+.goods-list{
+    display: flex;
+    flex-wrap: wrap;
+    color: #595757;
+    text-transform: uppercase;
+    font-size: 1.0rem;
+    letter-spacing: 0.1em;
+    margin: 40px 15px 40px -15px;
+    padding: 0;
+  }
+  .goods-item{
+    font-family:  'Montserrat', sans-serif;
+    font-weight: 300;
+    width: 50%;
+    margin-bottom: 24px;
+    padding-left: 15px;
+  }
+  .goods-img{
+    margin-top: 0;
+    padding: 12px;
+  }
+  .goods-title{
+    display: block;
+    margin-bottom: 10px;
+  }
+
+
+
+
+
+
+
+/*----------------------
+
+Footer
+
+----------------------*/
+.footer{
+    background-color: #6B5B49;
+    color: #FFF;
+    padding: 40px 15px 60px;
+}
+.footer-menu{
+    display: flex;
+    justify-content: center;
+    margin: 60px auto 80px;
+}
+.footer-menu-group{
+    padding:0 40px;
+}
+.footer-menu-title{
+    font-size: 18px;
+    padding-bottom: 20px;
+    margin: 0;
+}
+.footer-menu-list{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+small{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    padding-top: 20px;
+    display: block;
+}
+
+.btn{
+    display: block;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+    display: inline-block;
+    box-sizing: border-box;
+    color: #fff;
+    font-size: 12px;
+    background: transparent;
+    padding: 10px 20px;
+    border: 1px solid #fff;
+    transition: .3s;
+    letter-spacing:0.2em;
+    margin-top: 20px;
+}
+.btn:hover{
+    background:rgba(255, 255, 255, 0.25);
+}
+.form-detail{
+    margin: 0;
+}
+.form-parts{
+    -webkit-appearance: none;
+    appearance: none;
+    box-sizing: border-box;
+    border: solid 0.1px #F4F2F0;
+    background-color: #F4F2F0;
+}
+.form-parts-text{
+    width: 100%;
+    padding: 9px 8px;
+    color: #000;
+    font-size: 1.4rem;
+}
+
+
+
+
+
+@media screen and (min-width:768px){
+	
+    .sp{
+        display: none;
+    }
+    
+
+    /*--------------------------
+    *
+    * header
+    *
+    --------------------------*/
+    .header{
+		height: auto;
+		background-image: url("../image/firstview.png");
+		background-position: center;
+	}
+    .header-inner{
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+    .nav-inner{
+        display: flex;
+        margin: 0 auto;
+        align-items: center;
+    }
+    .site-title {
+        max-width: 200px;
+    }
+    .CC{
+        display: block;
+        position: absolute;
+        top: 80%;
+        left: 60%;
+        transform: translate(-20%, 60%);
+        font-size: 3.4rem;
+        line-height: 1.1;
+    }
+
+
+    /*--------------------------
+    *
+    * Navigation
+    *
+    --------------------------*/
+    .openbtn{
+        display: none;
+    }
+
+    .nav-line {
+        width: 54px;
+        margin: 0;
+    }
+    #g-nav{
+        position: relative;
+        top: -90px;
+        left: 0;
+        width: 150px;
+        padding: 0;
+        margin: 0;
+        background-color: transparent;
+        line-height: 1;
+        letter-spacing: 0.1em;
+        font-size: 1.0rem;
+    }
+    .nav-list{
+        white-space: nowrap;
+        position: fixed;
+    }
+
+    nav{
+        /*stickyで固定*/
+        position: -webkit-sticky;/*Safari*/
+        position: sticky;
+        /*固定したい位置*/
+        top: 100px;
+    }
+    /*---Search--*/
+    .form-search {
+        display: block;
+        position: relative;
+        margin: 28px 0;
+        border-bottom: solid 1px #999081;
+        font-size: 1.0rem;
+        line-height: 1.75;
+    }
+    .form-item {
+        position: absolute;
+        top: 0;
+        right: 0;
+        padding: 0;
+        color: #999081;
+        font-size: 1.6rem;
+    }
+    .search-btn {
+        cursor: pointer;
+    }
+    .fa-search:before {
+        content: "\f002";
+    }
+
+
+    /*--------------------------
+    *
+    * Main
+    *
+    --------------------------*/
+
+    .inner{
+		max-width: 960px;
+		margin: 0 auto;
+		padding: 56px 0 140px;
+	}
+    .goods-list {
+        margin-left: -25px;
+        padding-left: 25%;
+    }
+    .goods-item {
+        width: 33.333%;
+        padding-left: 25px;
+    }
+
+    /*--------------------------
+    *
+    * Footer
+    *
+    --------------------------*/
+    .footer-info{
+        display: flex;
+        align-items: baseline;
+        justify-content: space-around;
+    }
+    .footer-menu {
+        margin: 60px 20px 80px;
+    }
+
+
+    
+}
